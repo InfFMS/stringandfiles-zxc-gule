@@ -4,7 +4,7 @@
 # Общее количество слов во всем тексте файла.
 # Общее количество символов (включая пробелы).
 # Выведите полученную статистику на экран.
-p = ['.','—']
+p = ['.','—','-']
 with open('task1.txt','r',encoding='utf-8') as f:
     a=f.readlines()
     b=len(a)
@@ -14,8 +14,10 @@ with open('task1.txt','r',encoding='utf-8') as f:
         line=''.join(c for c in line if c not in p)
         word=line.split()
         c+=len(word)
+    for line in a:
+        line=''.join(c for c in line)
         d+=len(line)
     print(a)
-    print('колво строк:',b)
-    print('колво слов:',c)
-    print('колво символов:',d)
+    print('количество строк:',b)
+    print('количество слов:',c)
+    print('количество символов:',d)

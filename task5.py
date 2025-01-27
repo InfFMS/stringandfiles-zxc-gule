@@ -5,3 +5,18 @@
 # Его длина: длина
 #
 # Выведите это слово и длину в консоль.
+with open("task5.txt","r",encoding="utf-8") as f:
+    a=f.read()
+b=a.split()
+c=""
+h=0
+for i in b:
+    n=len(i)
+    if n>h:
+        h=n
+        c=i
+long=(f"Самое длинное слово:{c}\nЕго длина:{h}")
+with open("result5.txt","w",encoding="utf-8") as g:
+    g.write(long)
+print(c)
+print(h)

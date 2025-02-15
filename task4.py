@@ -3,3 +3,14 @@
 # Слова во всех предложениях должны быть приведены к верхнему регистру.
 # Между словами вместо пробела ставится символ "_".
 # После записи откройте этот файл, считайте содержимое и выведите его на экран.
+a=[]
+for i in range(5):
+    b=input()
+    a.append(b)
+with open("new_file4.txt","w",encoding="utf-8") as f:
+    for b in a:
+        new_file="_".join(word.upper() for word in b.split())
+        f.write(new_file+"\n")
+with open("new_file4.txt","r",encoding="utf-8") as f:
+    c=f.read()
+    print(c)

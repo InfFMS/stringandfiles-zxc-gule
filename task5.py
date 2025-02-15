@@ -8,14 +8,20 @@
 with open("task5.txt","r",encoding="utf-8") as f:
     a=f.read()
 b=a.split()
+print(b)
 c=""
 h=0
+p=['.',',','!','?']
 for i in b:
-    n=len(i)
+    if i[0] in p:
+        i=i[1:]
+    if i[-1] in p:
+        i=i[:-1]
+    n = len(i)
     if n>h:
         h=n
         c=i
-long=(f"Самое длинное слово:{c}\nЕго длина:{h}")
+long=(f"Самое длинное слово: {c}\nЕго длина: {h}")
 with open("result5.txt","w",encoding="utf-8") as g:
     g.write(long)
 print(c)
